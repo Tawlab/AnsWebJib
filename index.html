@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Anniversary</title>
+
+</head>
+<body>
+    <div class="login-container" id="loginPage">
+        <div class="login-form">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #495057;">เข้าสู่ระบบ</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button onclick="login()">เข้าสู่ระบบ</button>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="header">
+            <img src="/api/placeholder/100/100" alt="Flower bouquet" class="decoration flower-left">
+            <h1>💍Happy Anniversary 3 Months💐</h1>
+            <img src="/api/placeholder/100/100" alt="Ring" class="decoration ring-right">
+            <p>สุขสันต์วันครบรอบน้า</p>
+        </div>
+
+        <div class="photo-gallery">
+            <div class="gallery-item">
+                <img src="IMG/462534328_1609074743351780_7427073589197255192_n.jpg" alt="Memory 1" onclick="openModal(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG/462537140_554236030301109_1606382417435592570_n.jpg" alt="Memory 2" onclick="openModal(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG/462553115_422004660668812_6525928552654228281_n.jpg" alt="Memory 3" onclick="openModal(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG/462535833_897042118644062_6359610369682736367_n.jpg" alt="Memory 4" onclick="openModal(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG/462539024_1091510085923315_2710618482713518931_n.jpg" alt="Memory 5" onclick="openModal(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG/462537753_566515069245718_5328512873589918117_n.jpg" alt="Memory 6" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" onclick="openModal('IMG/IG1.png')">
+                <img src="IMG/IG1.png" alt="Memory 1">
+                <div class="card-content">
+                    <h3>Happy</h3>
+                    <p>อย่ากินขนมเยอะล่ะ</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('IMG/IG2.png')">
+                <img src="IMG/IG2.png" alt="Memory 2">
+                <div class="card-content">
+                    <h3>Anniversary</h3>
+                    <p>ตื่นมาพักผ่อนบ้างนะ</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('IMG/IG3.png')">
+                <img src="IMG/IG3.png" alt="Memory 3">
+                <div class="card-content">
+                    <h3>3 Months</h3>
+                    <p>อย่าเอาแต่งอแง</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('IMG/IG4.png')">
+                <img src="IMG/IG4.png" alt="Memory 4">
+                <div class="card-content">
+                    <h3>ความทรงจำแรก</h3>
+                    <p>วันแรกที่เราได้พบกัน เป็นวันที่มีความหมายที่สุด</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('IMG/IG5.png')">
+                <img src="IMG/IG5.png" alt="Memory 5">
+                <div class="card-content">
+                    <h3>ช่วงเวลาที่มีความสุข</h3>
+                    <p>ทุกวันที่ได้อยู่ด้วยกันเป็นวันที่มีความสุขเสมอ</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('IMG/462538292_561952716380276_2544793897760334540_n.jpg')">
+                <img src="IMG/462538292_561952716380276_2544793897760334540_n.jpg" alt="Memory 6">
+                <div class="card-content">
+                    <h3>ช่วงเวลาที่มีความสุข</h3>
+                    <p>ทุกวันที่ได้อยู่ด้วยกันเป็นวันที่มีความสุขเสมอ</p>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'Pornnapa' && password === '190767') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            } else {
+                alert('Username หรือ Password ไม่ถูกต้อง');
+            }
+        }
+
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>
